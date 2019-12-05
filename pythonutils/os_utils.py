@@ -32,11 +32,11 @@ def get_file_paths(path, recursive=False, ending_with=""):
 
                 if isdir:
                     if recursive:
-                        file_paths.extend(get_file_paths(file_path, recursive))
+                        file_paths.extend(get_file_paths(file_path, recursive, ending_with))
                 else:
                     add_entry = True
 
-                    if ending_with is not "":
+                    if ending_with is not "" and ending_with is not None:
                         add_entry = file_path.endswith(ending_with)
 
                     if add_entry:
